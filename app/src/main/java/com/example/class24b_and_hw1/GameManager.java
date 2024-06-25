@@ -98,7 +98,7 @@ public class GameManager {
         setImgPlayerPosition(p,curRow,newCol);
     }
 
-    void setImgPlayerPosition(Player p, int row, int newCol){
+    private void setImgPlayerPosition(Player p, int row, int newCol){
         if(newCol<0 || newCol>=cols){
             return;
         }
