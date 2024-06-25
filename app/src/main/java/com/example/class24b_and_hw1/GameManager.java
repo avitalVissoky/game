@@ -85,5 +85,29 @@ public class GameManager {
         rowLinearLayout.addView(gameMatrix[row][col]);
     }
 
+    public void goRight(Player p ){
+        int newCol = p.getCurrentCol()+1;
+        int curRow = p.getRow();
+        setImgPlayerPosition(p,curRow,newCol);
+
+    }
+
+    public void goLeft(Player p ){
+        int newCol = p.getCurrentCol()-1;
+        int curRow = p.getRow();
+        setImgPlayerPosition(p,curRow,newCol);
+    }
+
+    void setImgPlayerPosition(Player p, int row, int newCol){
+        if(newCol<0 || newCol>=cols){
+            return;
+        }
+        if (imgPlayer.getParent() != null) {
+            ((ViewGroup) imgPlayer.getParent()).removeView(imgPlayer);
+        }
+        gameMatrix[row][newCol].addView(imgPlayer);
+        p.setPosition(row,newCol);
+    }
+
 
 }

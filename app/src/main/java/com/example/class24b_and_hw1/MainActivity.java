@@ -53,12 +53,8 @@ import java.util.TimerTask;
         mediaPlayer= MediaPlayer.create(this,R.raw.sword_sound);
         linearMat = gameManager.getGameMatrix();
 
-
-
-        //initLayout(mainLinearLayout ,linearMat, imgPlayer);
-
-        img_go_right.setOnClickListener(view ->{goRight(p);} );
-        img_go_left.setOnClickListener(view ->{goLeft(p);} );
+        img_go_right.setOnClickListener(view ->{gameManager.goRight(p);} );
+        img_go_left.setOnClickListener(view ->{gameManager.goLeft(p);} );
 
         startObstaclesInterval();
     }
@@ -176,18 +172,18 @@ import java.util.TimerTask;
          //finish();
      }
 
-    void goRight(Player p ){
-        int newCol = p.getCurrentCol()+1;
-        int curRow = p.getRow();
-        setImgPlayerPosition(p,curRow,newCol);
-
-    }
-
-     void goLeft(Player p ){
-         int newCol = p.getCurrentCol()-1;
-         int curRow = p.getRow();
-         setImgPlayerPosition(p,curRow,newCol);
-     }
+//    void goRight(Player p ){
+//        int newCol = p.getCurrentCol()+1;
+//        int curRow = p.getRow();
+//        setImgPlayerPosition(p,curRow,newCol);
+//
+//    }
+//
+//     void goLeft(Player p ){
+//         int newCol = p.getCurrentCol()-1;
+//         int curRow = p.getRow();
+//         setImgPlayerPosition(p,curRow,newCol);
+//     }
 
     void setImgObstaclePosition(Obstacle obstacle, int newRow, int newCol){
         if (obstacle.getImg().getParent() != null) {
@@ -197,14 +193,14 @@ import java.util.TimerTask;
         obstacle.setPosition(newRow, newCol);
     }
 
-    void setImgPlayerPosition(Player p, int row, int newCol){
-        if(newCol<0 || newCol>=cols){
-            return;
-        }
-        if (img_player.getParent() != null) {
-            ((ViewGroup) img_player.getParent()).removeView(img_player);
-        }
-        linearMat[row][newCol].addView(img_player);
-        p.setPosition(row,newCol);
-    }
+//    void setImgPlayerPosition(Player p, int row, int newCol){
+//        if(newCol<0 || newCol>=cols){
+//            return;
+//        }
+//        if (img_player.getParent() != null) {
+//            ((ViewGroup) img_player.getParent()).removeView(img_player);
+//        }
+//        linearMat[row][newCol].addView(img_player);
+//        p.setPosition(row,newCol);
+//    }
  }
