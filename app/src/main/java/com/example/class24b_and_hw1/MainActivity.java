@@ -23,7 +23,7 @@ import java.util.TimerTask;
 
 
      int rows= 5;
-     int cols = 5;
+     int cols = 3;
      private com.example.class24b_and_hw1.GameManager gameManager;
      private AppCompatImageView img_go_left;
      private AppCompatImageView img_go_right;
