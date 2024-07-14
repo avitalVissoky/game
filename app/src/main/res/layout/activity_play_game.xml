@@ -6,7 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".PlayGameActivity">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/livesLayout"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:orientation="horizontal"
         android:gravity="bottom"
@@ -60,6 +60,32 @@
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignParentRight="true"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingHorizontal="10dp"
+        android:layout_alignBottom="@+id/livesLayout"
+        android:background="@color/black">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="score:"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_score_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="40dp"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/mainLinearLayout"
@@ -87,8 +113,9 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_alignParentBottom="true"
-        android:gravity="center_horizontal"
-        android:background="@color/white">
+        android:layout_marginBottom="2dp"
+        android:background="@color/white"
+        android:gravity="center_horizontal">
 
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -113,9 +140,7 @@
 
             android:src="@drawable/ic_right_arrow" />
 
+
     </LinearLayout>
-
-
-
 
 </RelativeLayout>

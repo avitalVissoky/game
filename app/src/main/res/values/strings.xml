@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Class24B-And-HW1</string>
+    
+    <string name="my_map_api_key">AIzaSyAhG5lbskjDxENwZUSCZvwz_B6qsnLwYHw"</string>
 </resources>

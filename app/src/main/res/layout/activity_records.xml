@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecordsActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="center"
+        android:src="@drawable/ic_demon_slayer_background" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ED000000"/>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/view_separator"
+        android:orientation="vertical">
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="RECORDS"
+            android:textSize="50dp"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/white"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_back_to_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:backgroundTint="#B2570000"
+            android:textColor="@color/white"
+            android:layout_margin="10dp"
+            android:text="Back to menu"
+            android:layout_gravity="center"/>
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/records_container"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="horizontal"-->
+<!--            >-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            >
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_place_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:text="place"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:padding="8dp"
+                android:textAlignment="center"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_score_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:text="score"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:padding="8dp"
+                android:textAlignment="center"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_name_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:text="player"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:padding="8dp"
+                android:textAlignment="center"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/main_LST_records"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/horizontal_item" />
+
+
+
+
+
+        <!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical"-->
+<!--                >-->
+<!--                <com.google.android.material.textview.MaterialTextView-->
+<!--                    android:id="@+id/name_col_title"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textSize="20dp"-->
+<!--                    android:text="name"-->
+<!--                    android:layout_marginLeft="20dp"-->
+<!--                    android:textColor="@color/white"/>-->
+
+
+<!--                <com.google.android.material.textview.MaterialTextView-->
+<!--                    android:id="@+id/txt_name_view_1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textSize="20dp"-->
+<!--                    android:layout_marginLeft="20dp"-->
+<!--                    android:textColor="@color/white"/>-->
+<!--                <com.google.android.material.textview.MaterialTextView-->
+<!--                    android:id="@+id/txt_name_view_2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textSize="20dp"-->
+<!--                    android:layout_marginLeft="20dp"-->
+<!--                    android:textColor="@color/white"/>-->
+<!--                <com.google.android.material.textview.MaterialTextView-->
+<!--                    android:id="@+id/txt_name_view_3"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textSize="20dp"-->
+<!--                    android:layout_marginLeft="20dp"-->
+<!--                    android:textColor="@color/white"/>-->
+<!--                <com.google.android.material.textview.MaterialTextView-->
+<!--                    android:id="@+id/txt_name_view_4"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textSize="20dp"-->
+<!--                    android:layout_marginLeft="20dp"-->
+<!--                    android:textColor="@color/white"/>-->
+<!--                <com.google.android.material.textview.MaterialTextView-->
+<!--                    android:id="@+id/txt_name_view_5"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textSize="20dp"-->
+<!--                    android:layout_marginLeft="20dp"-->
+<!--                    android:textColor="@color/white"/>-->
+<!--                <com.google.android.material.textview.MaterialTextView-->
+<!--                    android:id="@+id/txt_name_view_6"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textSize="20dp"-->
+<!--                    android:layout_marginLeft="20dp"-->
+<!--                    android:textColor="@color/white"/>-->
+<!--                <com.google.android.material.textview.MaterialTextView-->
+<!--                    android:id="@+id/txt_name_view_7"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textSize="20dp"-->
+<!--                    android:layout_marginLeft="20dp"-->
+<!--                    android:textColor="@color/white"/>-->
+<!--                <com.google.android.material.textview.MaterialTextView-->
+<!--                    android:id="@+id/txt_name_view_8"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textSize="20dp"-->
+<!--                    android:layout_marginLeft="20dp"-->
+<!--                    android:textColor="@color/white"/>-->
+<!--                <com.google.android.material.textview.MaterialTextView-->
+<!--                    android:id="@+id/txt_name_view_9"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textSize="20dp"-->
+<!--                    android:layout_marginLeft="20dp"-->
+<!--                    android:textColor="@color/white"/>-->
+<!--                <com.google.android.material.textview.MaterialTextView-->
+<!--                    android:id="@+id/txt_name_view_10"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textSize="20dp"-->
+<!--                    android:layout_marginLeft="20dp"-->
+<!--                    android:textColor="@color/white"/>-->
+
+
+<!--            </LinearLayout>-->
+
+
+<!--            <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical"-->
+<!--            >-->
+<!--            <com.google.android.material.textview.MaterialTextView-->
+<!--                android:id="@+id/score_col_title"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textSize="20dp"-->
+<!--                android:text="score"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:textColor="@color/white"/>-->
+
+<!--            <com.google.android.material.textview.MaterialTextView-->
+<!--                android:id="@+id/txt_score_view_1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textSize="20dp"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:textColor="@color/white"/>-->
+<!--            <com.google.android.material.textview.MaterialTextView-->
+<!--                android:id="@+id/txt_score_view_2"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textSize="20dp"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:textColor="@color/white"/>-->
+<!--            <com.google.android.material.textview.MaterialTextView-->
+<!--                android:id="@+id/txt_score_view_3"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textSize="20dp"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:textColor="@color/white"/>-->
+<!--            <com.google.android.material.textview.MaterialTextView-->
+<!--                android:id="@+id/txt_score_view_4"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textSize="20dp"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:textColor="@color/white"/>-->
+<!--            <com.google.android.material.textview.MaterialTextView-->
+<!--                android:id="@+id/txt_score_view_5"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textSize="20dp"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:textColor="@color/white"/>-->
+<!--            <com.google.android.material.textview.MaterialTextView-->
+<!--                android:id="@+id/txt_score_view_6"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textSize="20dp"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:textColor="@color/white"/>-->
+<!--            <com.google.android.material.textview.MaterialTextView-->
+<!--                android:id="@+id/txt_score_view_7"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textSize="20dp"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:textColor="@color/white"/>-->
+<!--            <com.google.android.material.textview.MaterialTextView-->
+<!--                android:id="@+id/txt_score_view_8"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textSize="20dp"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:textColor="@color/white"/>-->
+<!--            <com.google.android.material.textview.MaterialTextView-->
+<!--                android:id="@+id/txt_score_view_9"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textSize="20dp"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:textColor="@color/white"/>-->
+<!--            <com.google.android.material.textview.MaterialTextView-->
+<!--                android:id="@+id/txt_score_view_10"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textSize="20dp"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:textColor="@color/white"/>-->
+
+
+<!--        </LinearLayout>-->
+
+<!--        </LinearLayout>-->
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <View
+        android:id="@+id/view_separator"
+        android:layout_width="wrap_content"
+        android:layout_height="5dp"
+        android:layout_centerInParent="true"
+        />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/view_separator">
+
+<!--        <ImageView-->
+<!--            android:id="@+id/map_image"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:scaleType="centerCrop" />-->
+
+
+
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment" />
+
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+</RelativeLayout>

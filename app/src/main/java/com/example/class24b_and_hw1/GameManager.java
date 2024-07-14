@@ -8,26 +8,59 @@ import android.widget.LinearLayout;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.LinearLayoutCompat;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+
 public class GameManager {
 
+
     private int lives=3;
-    private int rows = 5;
+    private int rows;
     private int cols;
     private LinearLayoutCompat mainLinearLayout;
     private LinearLayoutCompat gameMatrix [][];
     private AppCompatImageView imgPlayer;
     private Context context ;
+    private int score = 0;
+    private List<RoadElement> roadElements;
+    private boolean isPaused = false;
 
-    public GameManager(Context context,LinearLayoutCompat mainLinearLayout,int initialLives, int cols, AppCompatImageView imgPlayer){
+    public GameManager(Context context,LinearLayoutCompat mainLinearLayout,int initialLives, int cols,int rows, AppCompatImageView imgPlayer){
         if(initialLives >0 && initialLives<=4){
             this.lives = initialLives;
         }
         this.cols = cols;
+        this.rows = rows;
         this.context=context;
         this.gameMatrix = new LinearLayoutCompat[rows][cols];
         this.mainLinearLayout=mainLinearLayout;
         this.imgPlayer = imgPlayer;
+        this.roadElements = new ArrayList<>();
         initLayout();
+    }
+
+
+    public void setPaused(boolean paused) {
+        isPaused = paused;
+    }
+    public boolean isPaused() {
+        return isPaused;
+    }
+    public List<RoadElement> getRoadElements() {
+        return roadElements;
+    }
+
+    public void addScore(){
+        score++;
+    }
+    public int getScore(){
+        return score;
     }
 
     public int getLives(){
@@ -109,5 +142,39 @@ public class GameManager {
         p.setPosition(row,newCol);
     }
 
+    public void saveNewRecord(String name,double latitude,double longitude, int score){
+        List<Record> records = getRecords();
+        records.add(new Record(name, latitude,longitude, score));
+        Collections.sort(records, (r1, r2) -> Integer.compare(r2.getScore(), r1.getScore()));
+        if (records.size() > 10) {
+            records = records.subList(0, 10);
+        }
+        saveRecords(records);
+    }
 
+    private List<Record> getRecords(){
+        String recordJson = MSP.getInstance().readString(Constants.SP_RECORDS_KEY,null);
+        if(recordJson == null){
+            return new ArrayList<>();
+        }else {
+            Type type = new TypeToken<List<Record>>() {}.getType();
+            return new Gson().fromJson(recordJson, type);
+        }
+    }
+    private void saveRecords(List<Record> records) {
+        String json = new Gson().toJson(records);
+        MSP.getInstance().saveString(Constants.SP_RECORDS_KEY, json);
+    }
+
+    public void addRoadElement(RoadElement element) {
+        roadElements.add(element);
+    }
+
+    public void removeRoadElement(RoadElement element) {
+        roadElements.remove(element);
+    }
+
+    public void pauseElements() {
+        isPaused = true;
+    }
 }
